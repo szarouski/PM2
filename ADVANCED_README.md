@@ -736,7 +736,7 @@ $ pm2 startup
 # auto-detect platform
 $ pm2 startup [platform]
 # render startup-script for a specific platform, the [platform] could be one of:
-#   ubuntu|centos|redhat|gentoo|systemd|darwin
+#   ubuntu|centos|redhat|gentoo|systemd|darwin|amazon
 ```
 
 Once you have started the apps and want to keep them on server reboot do:
@@ -1058,6 +1058,21 @@ $ pm2 startOrReload all.json             # Invoke reload
 $ pm2 startOrGracefulReload all.json     # Invoke gracefulReload
 ```
 
+## Using file key for authenticating
+
+Just add the "key" attribute with file path to the .pem key within the attributes "user", "hosts"...
+
+```
+    "production" : {
+      "key"  : "/path/to/some.pem",
+      "user" : "node",
+      "host" : "212.83.163.1",
+      "ref"  : "origin/master",
+      "repo" : "git@github.com:repo.git",
+      "path" : "/var/www/production",
+      "post-deploy" : "pm2 startOrRestart ecosystem.json --env production"
+    },
+```
 <a name="considerations"/>
 ## Considerations
 

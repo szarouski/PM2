@@ -1,3 +1,25 @@
+# 0.12.7
+
+- pm2 logs : Now shows merged logs
+- Fix #929 #1043 : Bug pm2 stop/restart not working properly
+- Fix #1039 : Better algorithm for vision recursive parsing to avoid infinite loops
+- Automatize #858 #905: Directly init pm2 folder if not present when using it programmatically
+- Add Bus system from PM2 programmatic API
+
+# 0.12.6
+
+- Enhancement of startJson command (force_name and additional_env options)
+- Fix #990 : pm2 flush while pm2 logs was open bug
+- Fix #1002 : pm2 monit bug
+- Fix #1024 : enhancement
+- Fix #1011 : json-stringify-safe bug
+- Fix #1007 #1028 #1013 #1009 : pm2 desc bug
+- Fix : pm2 interact delete when file doesn't exist bug
+
+# 0.12.5
+
+- Windows support
+
 # 0.12.4
 
 - Never start a process that already has a PID [#938]
